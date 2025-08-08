@@ -1,8 +1,6 @@
 asgiref==3.9.1
-beautifulsoup4==4.13.4
+dj-database-url==3.0.1
 Django==5.2.5
 django-bootstrap5==25.2
-platformshconfig==2.4.0
-soupsieve==2.7
 sqlparse==0.5.3
-typing_extensions==4.14.1
+whitenoise==6.9.0
