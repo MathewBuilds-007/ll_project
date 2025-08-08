@@ -1,0 +1,6 @@
+# Ignore environment config and compiled files
+ll_env/
+__pycache__/
+
+# Ignore database files
+*.sqlite3
