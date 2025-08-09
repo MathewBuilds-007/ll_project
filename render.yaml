@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: learning-logs
+    runtime: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: |
+      gunicorn ll_project001.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: DJANGO_SETTINGS_MODULE
+        value: ll_project001.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: learning-logs.onrender.com  # Match your service name
+      - key: DATABASE_URL
+        fromDatabase:
+          name: learning-logs-db  # Add if using Render's PostgreSQL
+          property: connectionString
